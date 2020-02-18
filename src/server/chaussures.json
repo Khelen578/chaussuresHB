@@ -1,0 +1,28 @@
+{
+  "chaussure": [
+    {
+      "id": 1,
+      "nom": "f51",
+      "marque": "Adidas",
+      "type": "Football",
+      "taille": 19,
+      "dateEntreStock": "2012-04-23T18:25:43.511Z"
+    },
+    {
+      "nom": "basquette",
+      "marque": "Puma",
+      "type": "Football",
+      "taille": 46,
+      "dateEntreStock": "2020-02-23",
+      "id": 2
+    },
+    {
+      "nom": "test",
+      "marque": "Adidas",
+      "type": "Sport",
+      "taille": 43,
+      "dateEntreStock": "2012-04-23",
+      "id": 3
+    }
+  ]
+}

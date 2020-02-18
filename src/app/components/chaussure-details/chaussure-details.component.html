@@ -1,0 +1,18 @@
+<ng-container *ngIf="!isLoading">
+    <div class="card mx-auto mt-4 p-2" style="width: 19rem;">
+        <div class="card-body">
+            <h5 class="card-title text-center" [routerLink]="['/chaussures',chaussure.id]">{{chaussure.nom | titlecase}}
+            </h5>
+            <h6 class="card-subtitle text-center mb-2 text-muted">{{chaussure.marque | titlecase}}</h6>
+            <p class="card-text"><span style="font-weight: bold;">Type : </span>{{chaussure.type}}<br><span
+                    style="font-weight: bold;">Taille : </span>
+                {{chaussure.taille}}<br><span style="font-weight: bold;">Date d'entrée en stock :
+                </span>{{chaussure.dateEntreStock | date: 'dd/MM/yyyy'}}
+            </p>
+            <div class="text-center">
+                <a routerLink='/biscuits' class="btn btn-primary">Retour à la liste</a>
+            </div>
+
+        </div>
+    </div>
+</ng-container>

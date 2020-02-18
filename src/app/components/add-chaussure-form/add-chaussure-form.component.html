@@ -1,0 +1,38 @@
+<div class="col-md-7 col-xl-6 container">
+    <form class=" form p-3 " #formValidation="ngForm" class="border p-4 m-4" (submit)="onSubmit()">
+        <label for="nom" class="label">Nom de la chaussure</label>
+        <input #nom="ngModel" class="form-control mb-3" type="text" id="nom" name="nom" required
+            [(ngModel)]="FormChaussure.nom">
+        <div class="alert alert-danger" [hidden]="nom.valid">Veuillez saisir le nom de la chaussure</div>
+        <label id="example-radio-group-label">Marque de la chaussure</label>
+        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+            [(ngModel)]="FormChaussure.marque" name="marque" required #marqueValidation="ngModel">
+            <mat-radio-button class="example-radio-button" *ngFor="let marque of listMarques" [value]="marque"
+                [id]="marque">
+                {{marque}}
+            </mat-radio-button>
+        </mat-radio-group>
+
+        <div class="alert alert-danger" [hidden]="marqueValidation.valid">Veuillez saisir la marque de la
+            chaussure
+        </div>
+        <label for="type" class="label">Type de chaussure</label>
+        <select #type="ngModel" class="form-control mb-3" id="type" name="type" required
+            [(ngModel)]="FormChaussure.type">
+            <option *ngFor="let type of listTypes" [value]="type">{{type}}</option>
+        </select>
+        <div class="alert alert-danger" [hidden]="type.valid">Veuillez saisir le type de chaussure</div>
+        <label for="taille" class="label">Taille de la chaussure</label>
+        <input #taille="ngModel" class="form-control mb-3" type="number" id="taille" name="taille" required
+            [(ngModel)]="FormChaussure.taille">
+        <div class="alert alert-danger" [hidden]="taille.valid">Veuillez saisir la taille de la chaussure</div>
+        <label for="date" class="label">Date d'entrée en stock de la chaussure</label>
+        <input #date="ngModel" class="form-control mb-3" type="date" id="date" name="date" required
+            [(ngModel)]="FormChaussure.dateEntreStock">
+        <div class="alert alert-danger" [hidden]="date.valid">Veuillez saisir la date d'entrée en stock de la chaussure
+        </div>
+        <input id="submit-button" class="btn btn-success mt-3" type="submit" [disabled]="!formValidation.valid"
+            value="Créer la chaussure">
+        <button routerLink='/chaussures' class="btn btn-primary mt-3 ml-3">Retourner à l'accueil</button>
+    </form>
+</div>
