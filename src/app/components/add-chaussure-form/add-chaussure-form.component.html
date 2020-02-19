@@ -1,5 +1,5 @@
 <div class="col-md-7 col-xl-6 container">
-    <form class=" form p-3 " #formValidation="ngForm" class="border p-4 m-4" (submit)="onSubmit()">
+    <form class=" form p-3 " #formValidation="ngForm" class="border p-4 m-4" (ngSubmit)="onSubmit()">
         <label for="nom" class="label">Nom de la chaussure</label>
         <input appAutofocus #nom="ngModel" class="form-control mb-3" type="text" id="nom" name="nom" required
             [(ngModel)]="FormChaussure.nom">
