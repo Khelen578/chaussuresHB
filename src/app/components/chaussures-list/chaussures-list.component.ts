@@ -34,14 +34,14 @@ export class ChaussuresListComponent implements OnInit {
   }
 
   refreshRenard() {
-    setInterval(function () {
+    setInterval(() => {
       this.renardLoading = true;
       this.chaussureService.getRenard().subscribe((data: SearchResult) => {
         this.renard = data;
         console.log('hello');
         this.renardLoading = false;
       });
-    }, 1000);
+    }, 5000);
   }
 
   onDelete($event) {

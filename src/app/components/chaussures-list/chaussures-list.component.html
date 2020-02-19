@@ -4,8 +4,9 @@
             <div class="col-12 text-center mt-3" style="font-size: 22px;">
                 Paires de chaussures restantes : <span style="font-weight: 560;">{{chaussures.length}}</span>
             </div>
-            <div class=" col-12 text-center">
-                <img [src]="renard?.image" alt="image de renard">
+            <div class=" col-12 text-center my-3">
+                <img class="img-fluid border" style="background-color: black;" [src]="renard?.image"
+                    alt="image de renard">
             </div>
             <app-chaussure *ngFor="let chaussure of chaussures" [chaussure]="chaussure"
                 (deleteEmmiter)="onDelete($event)">
