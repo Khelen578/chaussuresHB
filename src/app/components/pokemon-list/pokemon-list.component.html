@@ -22,8 +22,10 @@
 							[src]="searchResult[0].sprites.back_default" alt="">
 					</div>
 					<div class="">
-						<a class="btn btn-primary" style="color: white;padding-left: 50px;padding-right: 50px">Voir
-						</a><a class="btn btn-outline-danger ml-2" style="padding: 6px 30px 6px 30px;">Supprimer</a>
+						<a class="btn btn-primary" style="color: white;padding-left: 20px;padding-right: 20px"
+							(click)="previous()">Precedent
+						</a><a class="btn btn-outline-danger ml-2" style="padding: 6px 30px 6px 30px;"
+							(click)="next()">Suivant</a>
 					</div>
 
 				</div>

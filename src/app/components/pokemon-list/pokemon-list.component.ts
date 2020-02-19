@@ -30,4 +30,24 @@ export class PokemonListComponent implements OnInit {
     });
   }
 
+  next() {
+    this.isLoading = true;
+    return this.pokemonService.getPokemon(this.searchResult[0].id + 1 + "").subscribe((data: Pokemon) => {
+      this.searchResult = [];
+      this.searchResult.push(data);
+      this.isLoading = false;
+    });
+  }
+
+  previous() {
+    this.isLoading = true;
+    if ((this.searchResult[0].id - 1) > 0) {
+      return this.pokemonService.getPokemon(this.searchResult[0].id - 1 + "").subscribe((data: Pokemon) => {
+        this.searchResult = [];
+        this.searchResult.push(data);
+        this.isLoading = false;
+      });
+    }
+  }
+
 }
