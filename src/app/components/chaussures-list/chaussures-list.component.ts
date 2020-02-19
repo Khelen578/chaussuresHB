@@ -38,7 +38,6 @@ export class ChaussuresListComponent implements OnInit {
       this.renardLoading = true;
       this.chaussureService.getRenard().subscribe((data: SearchResult) => {
         this.renard = data;
-        console.log('hello');
         this.renardLoading = false;
       });
     }, 5000);

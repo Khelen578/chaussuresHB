@@ -1,0 +1,33 @@
+<div class="container ">
+	<form #formValidation="ngForm" (ngSubmit)="onSubmit()">
+		<label for="name" class="form-control mt-4">Rechercher un pokémon vi la PokéApi : https://pokeapi.co/</label>
+		<input [(ngModel)]="searchWord" required type="text" class="form-control mb-3" placeholder="nom du pokémon"
+			id="name" name="name" #nameValidation="ngModel">
+
+		<input [disabled]="!formValidation.valid" type="submit" value="Rechercher" class="btn btn-primary btn-block">
+	</form>
+	<ng-container *ngIf="searchResult.length !== 0 ">
+		<div class="card mx-2 mt-4 p-2" style="width: 21rem;">
+			<div class="card-body">
+				<h5 class="card-title ">#{{searchResult[0].id}} :
+					{{searchResult[0].name | titlecase}}
+				</h5>
+				<h6 class="card-subtitle text-left mb-2 text-muted">Poids : {{searchResult[0].weight}}</h6>
+				<div class="card-text mx-auto">
+					<div><span style="font-weight: 580;">Types : </span><span
+							*ngFor="let type of searchResult[0].types">{{(type.type.name | titlecase) + ' '}}</span>
+					</div>
+					<div>
+						<img [src]="searchResult[0].sprites.front_default" alt=""><img
+							[src]="searchResult[0].sprites.back_default" alt="">
+					</div>
+					<div class="">
+						<a class="btn btn-primary" style="color: white;padding-left: 50px;padding-right: 50px">Voir
+						</a><a class="btn btn-outline-danger ml-2" style="padding: 6px 30px 6px 30px;">Supprimer</a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</ng-container>
+</div>
