@@ -6,23 +6,15 @@
       "marque": "Adidas",
       "type": "Football",
       "taille": 19,
-      "dateEntreStock": "2012-04-23T18:25:43.511Z"
+      "dateEntreStock": "2005-08-23"
     },
     {
-      "nom": "basquette",
-      "marque": "Puma",
-      "type": "Football",
-      "taille": 46,
+      "nom": "CHANTEMESSE",
+      "marque": "Adidas",
+      "type": "Ville",
+      "taille": 16,
       "dateEntreStock": "2020-02-23",
       "id": 2
-    },
-    {
-      "nom": "test",
-      "marque": "Adidas",
-      "type": "Sport",
-      "taille": 43,
-      "dateEntreStock": "2012-04-23",
-      "id": 3
     }
   ]
 }

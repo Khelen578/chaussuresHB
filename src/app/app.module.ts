@@ -25,6 +25,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CommonModule } from '@angular/common';
 
 import { ToastrModule } from 'ngx-toastr';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { AutofocusDirective } from './directive/autofocus.directive';
 
 @NgModule({
   declarations: [
@@ -35,6 +38,8 @@ import { ToastrModule } from 'ngx-toastr';
     EditChaussureFormComponent,
     MenuComponent,
     ChaussureComponent,
+    NotFoundComponent,
+    AutofocusDirective,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +57,8 @@ import { ToastrModule } from 'ngx-toastr';
     ButtonsModule.forRoot(),
     CollapseModule.forRoot(),
     BsDatepickerModule.forRoot(),
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

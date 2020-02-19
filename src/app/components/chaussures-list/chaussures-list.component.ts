@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { Chaussure } from 'src/app/models/chaussure';
 import { ChaussureService } from 'src/app/services/chaussure.service';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-chaussures-list',
@@ -9,10 +10,11 @@ import { ChaussureService } from 'src/app/services/chaussure.service';
 })
 export class ChaussuresListComponent implements OnInit {
 
+
   chaussures: Chaussure[];
   isLoading: boolean;
 
-  constructor(private chaussureService: ChaussureService) { }
+  constructor(private chaussureService: ChaussureService, private modalService: BsModalService) { }
 
   ngOnInit() {
     this.isLoading = true;
@@ -25,10 +27,12 @@ export class ChaussuresListComponent implements OnInit {
   onDelete($event) {
     this.chaussureService.deleteChaussure($event.id).subscribe((response) => {
       this.chaussureService.getChaussures().subscribe((data: Chaussure[]) => {
-        this.chaussureService.showSuccess('Suppression terminée !', 'la chaussure a bien été supprimée');
+        this.chaussureService.showSuccess('Suppression terminée !', 'la chaussure "' + $event.nom + '" a bien été supprimée');
         this.chaussures = data;
       });
     });
   }
+
+
 
 }

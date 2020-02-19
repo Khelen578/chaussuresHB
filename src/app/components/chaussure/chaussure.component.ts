@@ -1,7 +1,8 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, TemplateRef } from '@angular/core';
 import { Chaussure } from 'src/app/models/chaussure';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-chaussure',
@@ -12,8 +13,9 @@ export class ChaussureComponent implements OnInit {
 
   @Input() chaussure: Chaussure;
   @Output() deleteEmmiter: EventEmitter<Chaussure> = new EventEmitter<Chaussure>();
+  modalRef: BsModalRef;
 
-  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer, private modalService: BsModalService) {
     iconRegistry.addSvgIcon(
       'thumbs-up',
       sanitizer.bypassSecurityTrustResourceUrl('assets/img/examples/thumbup-icon.svg'));
@@ -23,6 +25,11 @@ export class ChaussureComponent implements OnInit {
 
   onDelete() {
     this.deleteEmmiter.emit(this.chaussure);
+    this.modalRef.hide();
+  }
+
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
   }
 
 }

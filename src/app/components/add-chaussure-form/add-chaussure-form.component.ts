@@ -24,7 +24,8 @@ export class AddChaussureFormComponent implements OnInit {
 
   onSubmit() {
     this.chaussuresService.addChaussure(this.FormChaussure).subscribe(response => {
-      this.chaussuresService.showSuccess('Création terminée !', 'la chaussure a bien été ajoutée à la liste');
+      this.chaussuresService.showSuccess('Création terminée !', 'la chaussure "' + this.FormChaussure.nom +
+        '" a bien été ajoutée à la liste');
       this.router.navigate(['chaussures/']);
     });
   }

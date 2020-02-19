@@ -13,6 +13,7 @@ export class EditChaussureFormComponent implements OnInit {
   listTypes: string[];
   listMarques: string[];
   FormChaussure: Chaussure;
+  ChaussureOriginale: Chaussure;
   isLoading: boolean;
 
   constructor(private chaussuresService: ChaussureService, private router: Router, private activatedRoute: ActivatedRoute) { }
@@ -22,6 +23,7 @@ export class EditChaussureFormComponent implements OnInit {
     this.listTypes = this.chaussuresService.getTypes();
     this.listMarques = this.chaussuresService.getMarques();
     this.chaussuresService.getChaussureById(+this.activatedRoute.snapshot.paramMap.get('id')).subscribe((data: Chaussure) => {
+      this.ChaussureOriginale = data;
       this.FormChaussure = data;
       this.isLoading = false;
     });
@@ -29,7 +31,7 @@ export class EditChaussureFormComponent implements OnInit {
 
   onSubmit() {
     this.chaussuresService.editChaussure(this.FormChaussure).subscribe(response => {
-      this.chaussuresService.showInfo('Edition terminée !', 'la chaussure a bien été modifiée');
+      this.chaussuresService.showInfo('Edition terminée !', 'la chaussure "' + this.FormChaussure.nom + '" a bien été modifiée');
       this.router.navigate(['chaussures/']);
     });
   }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faPlus, faShoePrints } from '@fortawesome/free-solid-svg-icons';
+import { faPlusSquare, faShoePrints } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-menu',
@@ -9,7 +9,7 @@ import { faPlus, faShoePrints } from '@fortawesome/free-solid-svg-icons';
 export class MenuComponent implements OnInit {
 
   containerInside: boolean;
-  faPlus = faPlus;
+  faPlusSquare = faPlusSquare;
   faShoePrints = faShoePrints;
 
   constructor() { }
