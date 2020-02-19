@@ -12,7 +12,7 @@
 				<h5 class="card-title ">#{{searchResult[0].id}} :
 					{{searchResult[0].name | titlecase}}
 				</h5>
-				<h6 class="card-subtitle text-left mb-2 text-muted">Poids : {{searchResult[0].weight}}</h6>
+				<h6 class="card-subtitle text-left mb-2 text-muted">Poids : {{searchResult[0].weight}} kg</h6>
 				<div class="card-text mx-auto">
 					<div><span style="font-weight: 580;">Types : </span><span
 							*ngFor="let type of searchResult[0].types">{{(type.type.name | titlecase) + ' '}}</span>
