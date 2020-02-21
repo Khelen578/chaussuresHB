@@ -30,11 +30,6 @@
             [hidden]="taille.valid && ( FormChaussure.taille >= 16 && FormChaussure.taille <= 47)">Veuillez saisir la
             taille de la chaussure (entre 16 et
             47)</div>
-        <label for="date" class="label">Date d'entrée en stock de la chaussure</label>
-        <input #date="ngModel" class="form-control mb-3" type="date" id="date" name="date" required
-            [(ngModel)]="FormChaussure.dateEntreStock">
-        <div class="alert alert-danger" [hidden]="date.valid">Veuillez saisir la date d'entrée en stock de la chaussure
-        </div>
         <button routerLink='/chaussures' class="btn btn-primary mt-3 ">Retourner à l'accueil</button>
         <input id="submit-button" class="btn btn-success mt-3 ml-3" type="submit"
             [disabled]="!formValidation.valid || FormChaussure.taille < 16 || FormChaussure.taille > 47 "

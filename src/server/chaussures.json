@@ -9,12 +9,20 @@
       "dateEntreStock": "2005-08-23"
     },
     {
-      "nom": "CHANTEMESSE",
-      "marque": "Adidas",
-      "type": "Ville",
-      "taille": 16,
-      "dateEntreStock": "2020-02-23",
+      "nom": "fds",
+      "marque": "Puma",
+      "type": "Sport",
+      "taille": 20,
+      "dateEntreStock": "2020-02-22",
       "id": 2
+    },
+    {
+      "nom": "dsq",
+      "marque": "Nike",
+      "type": "Sport",
+      "taille": 17,
+      "dateEntreStock": "2020-02-16",
+      "id": 3
     }
   ]
 }

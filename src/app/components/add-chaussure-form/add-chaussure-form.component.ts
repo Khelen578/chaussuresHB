@@ -23,6 +23,7 @@ export class AddChaussureFormComponent implements OnInit {
   }
 
   onSubmit() {
+    this.FormChaussure.dateEntreStock = new Date();
     this.chaussuresService.addChaussure(this.FormChaussure).subscribe(response => {
       this.chaussuresService.showSuccess('Création terminée !', 'la chaussure "' + this.FormChaussure.nom +
         '" a bien été ajoutée à la liste');
