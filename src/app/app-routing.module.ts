@@ -5,6 +5,7 @@ import { ChaussureDetailsComponent } from './components/chaussure-details/chauss
 import { AddChaussureFormComponent } from './components/add-chaussure-form/add-chaussure-form.component';
 import { EditChaussureFormComponent } from './components/edit-chaussure-form/edit-chaussure-form.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'chaussures', component: ChaussuresListComponent },
   { path: 'add-chaussure-form', component: AddChaussureFormComponent },
   { path: 'edit-chaussure-form/:id', component: EditChaussureFormComponent },
+  { path: 'pokemons', component: PokemonListComponent },
   { path: '**', component: NotFoundComponent }
 ];
 

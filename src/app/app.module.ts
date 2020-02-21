@@ -28,6 +28,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AutofocusDirective } from './directive/autofocus.directive';
+import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { AutofocusDirective } from './directive/autofocus.directive';
     ChaussureComponent,
     NotFoundComponent,
     AutofocusDirective,
+    PokemonListComponent,
   ],
   imports: [
     BrowserModule,
